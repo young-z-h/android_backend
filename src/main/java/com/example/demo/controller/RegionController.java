@@ -11,13 +11,13 @@ import javax.servlet.http.HttpServlet;
 
 @RestController
 @CrossOrigin
-@Api(value = "公司种类")
+@Api(value = "地区")
 public class RegionController extends HttpServlet {
     @Autowired
     private RegionService regionService;
 
     @GetMapping(value = "/region/findAllRegion")
-    @ApiOperation(value = "查找所有企业类型")
+    @ApiOperation(value = "查找所有")
     public CommonResult findAll(){
         CommonResult result = new CommonResult();
         try {
@@ -33,7 +33,7 @@ public class RegionController extends HttpServlet {
 
 
     @GetMapping(value = "/region/findById")
-    @ApiOperation(value = "根据id查找企业类型")
+    @ApiOperation(value = "根据id查找")
     public CommonResult findById(@RequestBody String id){
         CommonResult result = new CommonResult();
         try {

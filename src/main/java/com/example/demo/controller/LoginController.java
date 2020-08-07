@@ -15,7 +15,7 @@ public class LoginController {
     private LoginService loginService;
 
     @PostMapping(value = "/login")
-    @ApiOperation("根据id查找用户")
+    @ApiOperation("登录")
     public CommonResult getUserById(@RequestParam(value = "username") String username,
                                     @RequestParam(value = "password") String password) {
         CommonResult result = new CommonResult();

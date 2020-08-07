@@ -34,12 +34,10 @@ public class RegionController extends HttpServlet {
 
     @GetMapping(value = "/region/findById")
     @ApiOperation(value = "根据id查找")
-    public CommonResult findById(@RequestBody String id){
+    public CommonResult findById(@RequestParam(value = "id") int id) {
         CommonResult result = new CommonResult();
         try {
-            System.out.println(id);
-            String[] ag = id.split(":");
-            result.setData(regionService.findById(Integer.parseInt(ag[1])));
+            result.setData(regionService.findById(id));
             return result;
         } catch (Exception e){
             e.printStackTrace();
